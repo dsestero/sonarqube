@@ -1,0 +1,36 @@
+{
+  "author": "Dario Sestero",
+  "dependencies": [    {
+      "name": "dsestero/common",
+      "version_requirement": ">=0.4.0"
+    },
+    {
+      "name": "dsestero/java",
+      "version_requirement": ">=0.1.0"
+    }
+  ],
+  "license": "Apache-2.0",
+  "name": "dsestero-sonarqube",
+  "operatingsystem_support": [
+      {
+          "operatingsystem": "Ubuntu",
+          "operatingsystemrelease": ["12.04"]
+      },
+      {
+          "operatingsystem": "Debian",
+      },
+      {
+          "operatingsystem": "CentOS",
+      },
+      {
+          "operatingsystem": "RedHat",
+      }
+  ],
+  "project_page": "https://github.com/dsestero/sonarqube",
+  "issues_url": "https://github.com/dsestero/sonarqube/issues",
+  "source": "https://github.com/dsestero/sonarqube.git",
+  "requirements": [{"name": "puppet", "version_requirement": "3.x"}],
+  "summary": "Installs the sonarqube system",
+  "tags": ["sonarqube"],
+  "version": "1.0.0-SNAPSHOT"
+}
