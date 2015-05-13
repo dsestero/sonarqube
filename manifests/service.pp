@@ -11,7 +11,7 @@
 # Sample Usage:
 #
 class sonarqube::service {
-  service { 'sonarqube':
+  service { 'sonar':
     ensure => running,
     enable => true,
     path   => '/etc/init.d',

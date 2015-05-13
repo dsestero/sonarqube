@@ -1,12 +1,24 @@
 {
   "author": "Dario Sestero",
   "dependencies": [    {
-      "name": "dsestero/common",
-      "version_requirement": ">=0.4.0"
+      "name": "dsestero/download_uncompress",
+      "version_requirement": "1.x"
     },
     {
       "name": "dsestero/java",
-      "version_requirement": ">=0.1.0"
+      "version_requirement": "1.x"
+    },
+    {
+      "name": "puppetlabs/mysql",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": "1.x"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": "4.x"
     }
   ],
   "license": "Apache-2.0",
@@ -15,17 +27,7 @@
       {
           "operatingsystem": "Ubuntu",
           "operatingsystemrelease": ["12.04"]
-      },
-      {
-          "operatingsystem": "Debian",
-      },
-      {
-          "operatingsystem": "CentOS",
-      },
-      {
-          "operatingsystem": "RedHat",
-      }
-  ],
+      }  ],
   "project_page": "https://github.com/dsestero/sonarqube",
   "issues_url": "https://github.com/dsestero/sonarqube/issues",
   "source": "https://github.com/dsestero/sonarqube.git",

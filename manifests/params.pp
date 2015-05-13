@@ -28,30 +28,14 @@ class sonarqube::params () {
           }
         }
         default : {
-          fail("The ${module_name} module is not supported on ${::operatingsystem} release ${::operatingsystemrelease}")
-        }
-      }
-    }
-    'RedHat', 'CentOS' : {
-      case $::operatingsystemrelease {
-        '6.6'   : {
-          case $::architecture {
-            'i386'  : {
-              # set some variables
-            }
-            default : {
-              fail("The ${module_name} module is not supported on ${::operatingsystem} release ${::operatingsystemrelease} ${::architecture}"
-              )
-            }
-          }
-        }
-        default : {
-          fail("The ${module_name} module is not supported on ${::operatingsystem} release ${::operatingsystemrelease}")
+          fail("The ${module_name} module is not supported on ${::operatingsystem} release ${::operatingsystemrelease}"
+          )
         }
       }
     }
     default  : {
-      fail("The ${module_name} module is not supported on an ${::operatingsystem} distribution.")
+      fail("The ${module_name} module is not supported on an ${::operatingsystem} distribution."
+      )
     }
   }
 }
