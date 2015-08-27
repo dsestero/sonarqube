@@ -1,4 +1,4 @@
-##yyy-mm-dd - Release - 1.0.0
+##2015-08-27 - Release - 1.0.0
 ###Summary
 Initial release as PuppetForge module.
 

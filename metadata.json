@@ -1,10 +1,6 @@
 {
   "author": "Dario Sestero",
   "dependencies": [    {
-      "name": "dsestero/download_uncompress",
-      "version_requirement": "1.x"
-    },
-    {
       "name": "dsestero/java",
       "version_requirement": "1.x"
     },
