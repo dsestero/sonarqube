@@ -41,7 +41,7 @@ The module creates a local `sonarqube` mysql db, adds the SonarQube Debian/Ubunt
 
 * enable a new service sonar to start at boot and listen for http request on port 9000.
 
-###Setup Requirements **OPTIONAL**
+###Setup Requirements
 
 This modules requires the following other modules to be installed:
 
