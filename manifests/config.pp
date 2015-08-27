@@ -17,9 +17,9 @@ class sonarqube::config () {
     group  => 'adm',
   }
 
-  file { "/opt/sonar/logs":
+  file { '/opt/sonar/logs':
     ensure => link,
-    target => "/var/log/sonar",
+    target => '/var/log/sonar',
     force  => true,
   }
 
