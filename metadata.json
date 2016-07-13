@@ -27,8 +27,8 @@
   "project_page": "https://github.com/dsestero/sonarqube",
   "issues_url": "https://github.com/dsestero/sonarqube/issues",
   "source": "https://github.com/dsestero/sonarqube.git",
-  "requirements": [{"name": "puppet", "version_requirement": "3.x"}],
+  "requirements": [{"name": "puppet", "version_requirement": ">= 3.0.0"}],
   "summary": "Installs the sonarqube system",
   "tags": ["sonarqube"],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
