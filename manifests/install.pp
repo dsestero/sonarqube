@@ -11,14 +11,19 @@
 # Sample Usage:
 #
 class sonarqube::install () {
-  include postgresql::server, java::java_8, apt
+  include java::java_8, apt
 
-  class { 'postgresql::globals':
+class {'postgresql::server':
   encoding => 'UTF-8',
   locale   => 'en_US.UTF-8',
-  }->
-  class { 'postgresql::server':
-  }
+}
+
+#  class { 'postgresql::globals':
+#  encoding => 'UTF-8',
+#  locale   => 'en_US.UTF-8',
+#  }->
+#  class { 'postgresql::server':
+#  }
 
 
   postgresql::server::db { 'sonarqube':
