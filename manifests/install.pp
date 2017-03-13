@@ -11,13 +11,19 @@
 # Sample Usage:
 #
 class sonarqube::install () {
-  include '::mysql::server', java::java_7, apt
+  include postgresql::server, java::java_8, apt
 
-  mysql::db { 'sonarqube':
+  class { 'postgresql::globals':
+  encoding => 'UTF-8',
+  locale   => 'en_US.UTF-8',
+  }->
+  class { 'postgresql::server':
+  }
+
+
+  postgresql::server::db { 'sonarqube':
     user     => 'sonarqube',
     password => 'sonarqube',
-    host     => 'localhost',
-    grant    => ['ALL'],
   } ->
   #  file { '/etc/apt/sources.list.d/sonarqube.list':
   #    ensure  => present,
@@ -27,6 +33,11 @@ class sonarqube::install () {
   #  exec { 'update-repo-sonar':
   #    command     => 'apt-get update -y --allow-unauthenticated -f',
   #    refreshonly => true,
+  apt::ppa { 'ppa:openjdk-r/ppa': } ->
+  package { 'openjdk-8-jdk':
+    ensure => present,
+  }
+
   apt::source { 'sonarqube':
     location       => 'http://downloads.sourceforge.net/project/sonar-pkg/deb',
     repos          => 'binary/',

@@ -5,12 +5,12 @@
       "version_requirement": "1.x"
     },
     {
-      "name": "puppetlabs/mysql",
-      "version_requirement": "3.x"
+      "name": "puppetlabs/postgresql",
+      "version_requirement": "4.x"
     },
     {
       "name": "puppetlabs/apt",
-      "version_requirement": "1.x"
+      "version_requirement": "2.x"
     },
     {
       "name": "puppetlabs/stdlib",
