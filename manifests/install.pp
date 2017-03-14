@@ -38,10 +38,6 @@ class {'postgresql::server':
   #  exec { 'update-repo-sonar':
   #    command     => 'apt-get update -y --allow-unauthenticated -f',
   #    refreshonly => true,
-  apt::ppa { 'ppa:openjdk-r/ppa': } ->
-  package { 'openjdk-8-jdk':
-    ensure => present,
-  }
 
   apt::source { 'sonarqube':
     location       => 'http://downloads.sourceforge.net/project/sonar-pkg/deb',
