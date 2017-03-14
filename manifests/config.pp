@@ -40,15 +40,15 @@ class sonarqube::config () {
   file_line { 'jdbc.url':
     ensure => present,
     path   => '/opt/sonar/conf/sonar.properties',
-    line   => 'sonar.jdbc.url=jdbc:mysql://localhost:3306/sonarqube?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance',
+    line   => 'sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube',
     match  => '^sonar.jdbc.url=',
   }
 
-  file_line { 'jdbc.driverClassName':
-    ensure => present,
-    path   => '/opt/sonar/conf/sonar.properties',
-    line   => 'sonar.jdbc.driverClassName=com.mysql.jdbc.Driver',
-    match  => '^sonar.jdbc.driverClassName=',
-  }
+#  file_line { 'jdbc.driverClassName':
+#    ensure => present,
+#    path   => '/opt/sonar/conf/sonar.properties',
+#    line   => 'sonar.jdbc.driverClassName=com.mysql.jdbc.Driver',
+#    match  => '^sonar.jdbc.driverClassName=',
+#  }
 
 }
