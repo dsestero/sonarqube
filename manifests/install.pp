@@ -29,7 +29,7 @@ class {'postgresql::server':
   postgresql::server::db { 'sonarqube':
     user     => 'sonarqube',
     password => 'sonarqube',
-  } ->
+  }
   #  file { '/etc/apt/sources.list.d/sonarqube.list':
   #    ensure  => present,
   #    content => 'deb http://downloads.sourceforge.net/project/sonar-pkg/deb
