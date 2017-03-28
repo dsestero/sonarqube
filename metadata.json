@@ -1,16 +1,17 @@
 {
   "author": "Dario Sestero",
-  "dependencies": [    {
+  "dependencies": [    
+    {
+      "name": "dsestero/download_uncompress",
+      "version_requirement": "1.x"
+    },
+    {
       "name": "dsestero/java",
       "version_requirement": "1.x"
     },
     {
       "name": "puppetlabs/postgresql",
       "version_requirement": "4.x"
-    },
-    {
-      "name": "puppetlabs/apt",
-      "version_requirement": "2.x"
     },
     {
       "name": "puppetlabs/stdlib",
@@ -27,8 +28,8 @@
   "project_page": "https://github.com/dsestero/sonarqube",
   "issues_url": "https://github.com/dsestero/sonarqube/issues",
   "source": "https://github.com/dsestero/sonarqube.git",
-  "requirements": [{"name": "puppet", "version_requirement": ">= 3.0.0"}],
+  "requirements": [{"name": "puppet", "version_requirement": ">= 4.0.0"}],
   "summary": "Installs the sonarqube system",
   "tags": ["sonarqube"],
-  "version": "1.0.1"
+  "version": "1.1.0"
 }
