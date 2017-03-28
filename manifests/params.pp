@@ -19,7 +19,8 @@ class sonarqube::params () {
         '12.04' : {
           case $::architecture {
             'amd64' : {
-              $distribution_name = 'https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.3.zip'
+              $download_base_url = 'https://sonarsource.bintray.com/Distribution/sonarqube'
+              $distribution_name = 'sonarqube-6.3.zip'
             }
             default : {
               fail("The ${module_name} module is not supported on ${::operatingsystem} release ${::operatingsystemrelease} ${::architecture}"

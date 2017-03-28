@@ -10,7 +10,7 @@
 #
 # Sample Usage:
 #
-class sonarqube::install ($distribution_name) {
+class sonarqube::install ($download_base_url, $distribution_name) {
   include java::java_8
 
 class {'postgresql::server':
@@ -23,6 +23,7 @@ class {'postgresql::server':
     password => 'sonarqube',
   } ->
   download_uncompress { 'install_sonarqube':
+    download_base_url => $download_base_url,
     distribution_name => $distribution_name,
     dest_folder       => "/opt/sonar",
     creates           => "/opt/sonar",
