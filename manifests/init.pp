@@ -10,10 +10,10 @@
 #
 # Sample Usage:
 #
-class sonarqube ($distribution_name = $sonarqube::params::distribution_name) inherits sonarqube::params {
+class sonarqube ($sonar_version = $sonarqube::params::sonar_version) inherits sonarqube::params {
   class { 'sonarqube::install':
     download_base_url => $sonarqube::params::download_base_url,
-    distribution_name => $distribution_name,
+    sonar_version     => $sonar_version,
   } -> class { 'sonarqube::config':
   } ~> class { 'sonarqube::service':
   }

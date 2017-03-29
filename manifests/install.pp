@@ -10,8 +10,10 @@
 #
 # Sample Usage:
 #
-class sonarqube::install ($download_base_url, $distribution_name) {
+class sonarqube::install ($download_base_url, $sonar_version) {
   include java::java_8
+
+$distribution_name = "${sonar_version}.zip"
 
 class {'postgresql::server':
   encoding => 'UTF-8',
@@ -25,11 +27,15 @@ class {'postgresql::server':
   download_uncompress { 'install_sonarqube':
     download_base_url => $download_base_url,
     distribution_name => $distribution_name,
-    dest_folder       => "/opt/sonar",
-    creates           => "/opt/sonar",
+    dest_folder       => "/opt",
+    creates           => "/opt/${sonar_version}",
     uncompress        => 'zip',
+  } ->
+  file {'/opt/sonar':
+    ensure => link,
+    target => "/opt/${sonar_version}",
   } ~>
-  exec{"set_perms_sonar":
+  exec {'set_perms_sonar':
     command     =>  '/bin/chown -R sonar:adm /opt/sonar',
     refreshonly =>  true
   }
