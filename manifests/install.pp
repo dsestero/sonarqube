@@ -28,8 +28,10 @@ class {'postgresql::server':
     dest_folder       => "/opt/sonar",
     creates           => "/opt/sonar",
     uncompress        => 'zip',
-    user              => sonar,
-    group             => adm,
+  } ~>
+  exec{"set_perms_sonar":
+    command     =>  '/bin/chown -R sonar:adm /opt/sonar',
+    refreshonly =>  true
   }
 
 }
