@@ -36,7 +36,7 @@ class {'postgresql::server':
     target => "/opt/${sonar_version}",
   } ~>
   exec {'set_perms_sonar':
-    command     =>  '/bin/chown -R sonar:adm /opt/sonar',
+    command     =>  "/bin/chown -R sonar:adm /opt/${sonar_version}",
     refreshonly =>  true
   }
 
