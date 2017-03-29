@@ -23,8 +23,15 @@ class {'postgresql::server':
   postgresql::server::db { 'sonarqube':
     user     => 'sonarqube',
     password => 'sonarqube',
+  }
+
+  user {'sonar':
+    ensure => present,
+    home   => '/opt/sonar',
+    shell  => '/bin/bash',
+    system => true,
   } ->
-  download_uncompress { 'install_sonarqube':
+  download_uncompress {'install_sonarqube':
     download_base_url => $download_base_url,
     distribution_name => $distribution_name,
     dest_folder       => "/opt",
@@ -38,6 +45,12 @@ class {'postgresql::server':
   exec {'set_perms_sonar':
     command     =>  "/bin/chown -R sonar:adm /opt/${sonar_version}",
     refreshonly =>  true
+  }
+
+  file {'/etc/init.d/sonar':
+    ensure => present,
+    source => "puppet:///modules/${module_name}/sonar-init",
+    mode   => '755',
   }
 
 }
