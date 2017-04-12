@@ -87,7 +87,7 @@ Installs, configure and sets up a sonarqube service.
 
 ##Limitations
 
-At the moment the module targets only OpenJDK on Ubuntu platforms. Specifically, it is tested only on Ubuntu 12.04 64 bit distributions, although probably it will work also on more recent versions and different architectures.
+At the moment the module targets only OpenJDK on Ubuntu platforms. Specifically, it was tested only on Ubuntu 12.04 and Ubuntu 16.04 64 bit distributions, although probably it will work also on more recent versions and different architectures.
 
 ##Development
 

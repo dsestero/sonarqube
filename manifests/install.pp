@@ -15,11 +15,10 @@ class sonarqube::install ($download_base_url, $sonar_version) {
 
 $distribution_name = "${sonar_version}.zip"
 
-class {'postgresql::server':
-  encoding => 'UTF-8',
-  locale   => 'en_US.UTF-8',
-}
-
+  class {'postgresql::server':
+    encoding => 'UTF-8',
+    locale   => 'en_US.UTF-8',
+  } ->
   postgresql::server::db { 'sonarqube':
     user     => 'sonarqube',
     password => 'sonarqube',

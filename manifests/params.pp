@@ -16,7 +16,7 @@ class sonarqube::params () {
   case $::operatingsystem {
     'Ubuntu' : {
       case $::operatingsystemrelease {
-        '12.04' : {
+        '12.04', '14.04', '16.04' : {
           case $::architecture {
             'amd64' : {
               $download_base_url = 'https://sonarsource.bintray.com/Distribution/sonarqube'
